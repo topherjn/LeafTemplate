@@ -60,7 +60,7 @@
                         <asp:Label ID="groupsLabel" runat="server" Text="groups:"></asp:Label>
                         </td>
                     <td>
-                        <asp:DropDownList ID="groupsDDL" runat="server">
+                        <asp:DropDownList ID="groupsDDL" runat="server" OnSelectedIndexChanged="groupsDDL_SelectedIndexChanged">
                             <asp:ListItem>research-principles-and-methodologies</asp:ListItem>
                             <asp:ListItem>pedagogical-styles</asp:ListItem>
                             <asp:ListItem>technologies</asp:ListItem>

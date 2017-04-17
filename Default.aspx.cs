@@ -94,4 +94,8 @@ public partial class _Default : System.Web.UI.Page
         Response.End();
     }
 
+
+    protected void groupsDDL_SelectedIndexChanged(object sender, EventArgs e)
+    {
+    }
 }
