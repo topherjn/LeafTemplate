@@ -55,7 +55,15 @@ public partial class _Default : System.Web.UI.Page
         output += titleurlLabel.Text + " " + "\"" + titleurlTextBox.Text + "\"\n";
         output += authorLabel.Text + " " + authorTextBox.Text + "\n";
         output += groupsLabel.Text + " " + groupsDDL.SelectedValue + "\n";
-        //output += categoriesLabel.Text + " " + categoriesDDL.SelectedValue + "\n";
+        output += categoriesLabel.Text + " [ ";
+        foreach (ListItem item in categoriesListBox.Items)
+        {
+            if (item.Selected)
+            {
+                output += item.Value + ",";
+             }
+        }
+        output += " ]\n";
         output += topicsLabel.Text + " " + topicsDDL.SelectedValue + "\n";
         output += summaryLabel.Text + "\n     " + summaryTextBox.Text + "\n";
         output += citeLabel.Text + "\n     " + citeTextBox.Text + "\n";
