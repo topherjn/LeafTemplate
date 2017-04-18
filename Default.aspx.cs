@@ -36,10 +36,8 @@ public partial class _Default : System.Web.UI.Page
 
         sr.Close();
 
-        foreach(var item in categories)
-        {
-            Response.Write(item + "<br />");
-        }
+        groupsDDL.DataSource = groups;
+        groupsDDL.DataBind();
     }
 
     protected void submitButton_Click(object sender, EventArgs e)
