@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Web;
+using System.Web.Hosting;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
@@ -11,10 +13,33 @@ public partial class _Default : System.Web.UI.Page
     string yaml = "---";
     string fileName = string.Empty;
     string output = string.Empty;
+    List<string> groups = new List<string>();
+    List<Category> categories = new List<Category>();
 
     protected void Page_Load(object sender, EventArgs e)
     {
-       // pubdateTextBox.Text = DateTime.Now.Date.ToString("yyyy-MM-dd");
+       
+        StreamReader sr = new StreamReader(HostingEnvironment.MapPath(@"~/App_Data/categories.txt"));
+        string line;
+        string[] words;
+
+        while((line = sr.ReadLine()) != null)
+        {
+            words = line.Split(',');
+            groups.Add(words[0]);
+
+           for(int i = 1; i < words.Length; i++)
+            {
+                categories.Add(new Category(words[i], words[0]));
+            }
+        }
+
+        sr.Close();
+
+        foreach(var item in categories)
+        {
+            Response.Write(item + "<br />");
+        }
     }
 
     protected void submitButton_Click(object sender, EventArgs e)
