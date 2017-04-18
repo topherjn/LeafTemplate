@@ -94,6 +94,7 @@ public partial class _Default : System.Web.UI.Page
 
     protected void clearButton_Click(object sender, EventArgs e)
     {
+        categoriesListBox.ClearSelection();
         CleartextBoxes(this);  
     }
 
