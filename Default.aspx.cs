@@ -49,21 +49,39 @@ public partial class _Default : System.Web.UI.Page
 
     protected void submitButton_Click(object sender, EventArgs e)
     {
+        BuildOutputString();
+
+        WriteFile();
+    }
+
+    private void BuildOutputString()
+    {
         output += yaml + "\n";
         output += layoutLabel.Text + " " + layoutDDL.SelectedValue + "\n";
         output += titleLabel.Text + " " + "\"" + titleTextBox.Text + "\"\n";
         output += titleurlLabel.Text + " " + "\"" + titleurlTextBox.Text + "\"\n";
-        output += authorLabel.Text + " " + authorTextBox.Text + "\n";
+
+        string[] authors = authorTextBox.Text.Split(',');
+
+        output += authorLabel.Text + " ";
+        output += "[\"";
+
+        foreach(string author in authors)
+        {
+            output += author.Trim() + "\",";
+        }
+        output += "]\n";
         output += groupsLabel.Text + " " + groupsDDL.SelectedValue + "\n";
-        output += categoriesLabel.Text + " [ ";
+        output += categoriesLabel.Text + " [\"";
+
         foreach (ListItem item in categoriesListBox.Items)
         {
             if (item.Selected)
             {
-                output += item.Value + ",";
-             }
+                output += item.Value + "\",";
+            }
         }
-        output += " ]\n";
+        output += "]\n";
         output += topicsLabel.Text + " " + topicsDDL.SelectedValue + "\n";
         output += summaryLabel.Text + "\n     " + summaryTextBox.Text + "\n";
         output += citeLabel.Text + "\n     " + citeTextBox.Text + "\n";
@@ -71,11 +89,6 @@ public partial class _Default : System.Web.UI.Page
         output += "added-date: " + DateTime.Now.Date.ToString("yyyy-MM-dd") + "\n";
         output += resourcetypeLabel.Text + " " + resourcetypeDDL.SelectedValue + "\n";
         output += yaml + "\n";
-
-        WriteFile();
-
-
-   
     }
 
     private void constructFileName()
