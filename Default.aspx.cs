@@ -13,31 +13,38 @@ public partial class _Default : System.Web.UI.Page
     string yaml = "---";
     string fileName = string.Empty;
     string output = string.Empty;
-    List<string> groups = new List<string>();
-    List<Category> categories = new List<Category>();
+    static List<string> groups = new List<string>();
+    static List<Category> categories = new List<Category>();
 
     protected void Page_Load(object sender, EventArgs e)
     {
-       
-        StreamReader sr = new StreamReader(HostingEnvironment.MapPath(@"~/App_Data/categories.txt"));
-        string line;
-        string[] words;
-
-        while((line = sr.ReadLine()) != null)
+        if (!IsPostBack)
         {
-            words = line.Split(',');
-            groups.Add(words[0]);
 
-           for(int i = 1; i < words.Length; i++)
+            StreamReader sr = new StreamReader(HostingEnvironment.MapPath(@"~/App_Data/categories.txt"));
+            string line;
+            string[] words;
+
+            while ((line = sr.ReadLine()) != null)
             {
-                categories.Add(new Category(words[i], words[0]));
+                words = line.Split(',');
+                groups.Add(words[0]);
+
+                for (int i = 1; i < words.Length; i++)
+                {
+                    categories.Add(new Category(words[i], words[0]));
+                }
             }
+
+            sr.Close();
+
+            groupsDDL.DataSource = groups;
+            groupsDDL.DataBind();
+
+            filterCategories();
         }
 
-        sr.Close();
 
-        groupsDDL.DataSource = groups;
-        groupsDDL.DataBind();
     }
 
     protected void submitButton_Click(object sender, EventArgs e)
@@ -48,7 +55,7 @@ public partial class _Default : System.Web.UI.Page
         output += titleurlLabel.Text + " " + "\"" + titleurlTextBox.Text + "\"\n";
         output += authorLabel.Text + " " + authorTextBox.Text + "\n";
         output += groupsLabel.Text + " " + groupsDDL.SelectedValue + "\n";
-        output += categoriesLabel.Text + " " + categoriesDDL.SelectedValue + "\n";
+        //output += categoriesLabel.Text + " " + categoriesDDL.SelectedValue + "\n";
         output += topicsLabel.Text + " " + topicsDDL.SelectedValue + "\n";
         output += summaryLabel.Text + "\n     " + summaryTextBox.Text + "\n";
         output += citeLabel.Text + "\n     " + citeTextBox.Text + "\n";
@@ -120,5 +127,20 @@ public partial class _Default : System.Web.UI.Page
 
     protected void groupsDDL_SelectedIndexChanged(object sender, EventArgs e)
     {
+        filterCategories();
+    }
+
+    private void filterCategories()
+    {
+        categoriesListBox.Items.Clear();
+
+        foreach (Category item in categories)
+        {
+            if(item.Group == groupsDDL.SelectedValue)
+            {
+          
+                categoriesListBox.Items.Add(item.Name);
+            }
+        }
     }
 }
