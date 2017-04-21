@@ -79,15 +79,7 @@
                         <asp:Label ID="topicsLabel" runat="server" Text="topics:"></asp:Label>
                     </td>
                     <td>
-                        <asp:DropDownList ID="topicsDDL" runat="server">
-                            <asp:ListItem>biographies</asp:ListItem>
-                            <asp:ListItem>in-the-media</asp:ListItem>
-                            <asp:ListItem>interviews</asp:ListItem>
-                            <asp:ListItem>introductory-resources</asp:ListItem>
-                            <asp:ListItem>introductory-resources-video</asp:ListItem>
-                            <asp:ListItem>ongoing-projects</asp:ListItem>
-                            <asp:ListItem>scholarly-readings</asp:ListItem>
-                        </asp:DropDownList>
+                        <asp:ListBox ID="topicsListBox" runat="server"></asp:ListBox>
                     </td>
                 </tr>
                 <tr>

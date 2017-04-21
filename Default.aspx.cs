@@ -87,7 +87,20 @@ public partial class _Default : System.Web.UI.Page
         output = output.TrimEnd(' ');
         output = output.TrimEnd(',');
         output += " ]\n";
-        output += topicsLabel.Text + " " + topicsDDL.SelectedValue + "\n";
+     
+        output += topicsLabel.Text + " [ ";
+
+        foreach (ListItem item in topicsListBox.Items)
+        {
+            if (item.Selected)
+            {
+                output += "\"" + item.Value + "\", ";
+            }
+        }
+        output = output.TrimEnd(' ');
+        output = output.TrimEnd(',');
+        output += " ]\n";
+
         output += summaryLabel.Text + "\n     " + summaryTextBox.Text + "\n";
         output += citeLabel.Text + "\n     " + citeTextBox.Text + "\n";
         output += pubdateLabel.Text + " " + pubdateTextBox.Text + "\n";
