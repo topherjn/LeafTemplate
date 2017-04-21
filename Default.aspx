@@ -71,15 +71,22 @@
                         <asp:Label ID="categoriesLabel" runat="server" Text="categories:"></asp:Label>
                     </td>
                     <td>
-                        <asp:ListBox runat="server" ID="categoriesListBox" SelectionMode="multiple">
-                        </asp:ListBox></td>
+                        <asp:ListBox runat="server" ID="categoriesListBox" SelectionMode="multiple"></asp:ListBox></td>
                 </tr>
                 <tr>
                     <td>
                         <asp:Label ID="topicsLabel" runat="server" Text="topics:"></asp:Label>
                     </td>
                     <td>
-                        <asp:ListBox ID="topicsListBox" runat="server"></asp:ListBox>
+                        <asp:ListBox ID="topicsListBox" runat="server" SelectionMode="Multiple">
+                            <asp:ListItem>biographies</asp:ListItem>
+                            <asp:ListItem>in-the-media</asp:ListItem>
+                            <asp:ListItem>interviews</asp:ListItem>
+                            <asp:ListItem>introductory-resources</asp:ListItem>
+                            <asp:ListItem>introductory-resources-video</asp:ListItem>
+                            <asp:ListItem>ongoing-projects</asp:ListItem>
+                            <asp:ListItem>scholarly-readings</asp:ListItem>
+                        </asp:ListBox>
                     </td>
                 </tr>
                 <tr>
