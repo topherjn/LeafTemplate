@@ -99,7 +99,7 @@
                 </tr>
                 <tr>
                     <td>
-                        <asp:Label ID="citeLabel" runat="server" Text="cite: |"></asp:Label>
+                        <asp:Label ID="citeLabel" runat="server" Text="cite: &gt;"></asp:Label>
                     </td>
                     <td>
                         <asp:TextBox ID="citeTextBox" runat="server" Height="70px" Width="667px" CssClass="auto-style4" TextMode="MultiLine"></asp:TextBox>
