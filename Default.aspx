@@ -80,11 +80,16 @@
                     <td>
                         <asp:ListBox ID="topicsListBox" runat="server" SelectionMode="Multiple">
                             <asp:ListItem>biographies</asp:ListItem>
+                            <asp:ListItem>controlling-for-biases</asp:ListItem>
                             <asp:ListItem>in-the-media</asp:ListItem>
                             <asp:ListItem>interviews</asp:ListItem>
                             <asp:ListItem>introductory-resources</asp:ListItem>
                             <asp:ListItem>introductory-resources-video</asp:ListItem>
+                            <asp:ListItem>irb-procedures</asp:ListItem>
                             <asp:ListItem>ongoing-projects</asp:ListItem>
+                            <asp:ListItem>research-designs</asp:ListItem>
+                            <asp:ListItem>research-ethics</asp:ListItem>
+                            <asp:ListItem>research-vocabulary</asp:ListItem>
                             <asp:ListItem>scholarly-readings</asp:ListItem>
                         </asp:ListBox>
                     </td>

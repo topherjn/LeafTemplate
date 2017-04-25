@@ -18,7 +18,7 @@ public partial class _Default : System.Web.UI.Page
 
     protected void Page_Load(object sender, EventArgs e)
     {
-        pubdateTextBox.Text = DateTime.Now.Date.ToString("yyyy-MM-dd"); 
+      
         if (!IsPostBack)
         {
 
