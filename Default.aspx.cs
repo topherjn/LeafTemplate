@@ -112,6 +112,8 @@ public partial class _Default : System.Web.UI.Page
 
     private void constructFileName()
     {
+        if(string.IsNullOrEmpty(pubdateTextBox.Text)) pubdateTextBox.Text = DateTime.Now.Date.ToString("yyyy-MM-dd");
+
         fileName += 
             pubdateTextBox.Text + 
             "-" + titleTextBox.Text
@@ -146,8 +148,6 @@ public partial class _Default : System.Web.UI.Page
                 CleartextBoxes(x);
             }
         }
-
-        pubdateTextBox.Text = DateTime.Now.Date.ToString("yyyy-MM-dd");
     }
 
     private void WriteFile()
