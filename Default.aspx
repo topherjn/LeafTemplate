@@ -91,6 +91,12 @@
                             <asp:ListItem>research-ethics</asp:ListItem>
                             <asp:ListItem>research-vocabulary</asp:ListItem>
                             <asp:ListItem>scholarly-readings</asp:ListItem>
+                            <asp:ListItem>controlled-experiments-in-education</asp:ListItem>
+                            <asp:ListItem>exemplary-controlled-experiments</asp:ListItem>
+                            <asp:ListItem>making-a-good-survey</asp:ListItem>
+                            <asp:ListItem>sampling-tips</asp:ListItem>
+                            <asp:ListItem>case-study-research</asp:ListItem>
+                            <asp:ListItem>qualitative-vs-quantitative-research</asp:ListItem>
                         </asp:ListBox>
                     </td>
                 </tr>
