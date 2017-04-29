@@ -18,6 +18,7 @@ public partial class _Default : System.Web.UI.Page
 
     protected void Page_Load(object sender, EventArgs e)
     {
+      
         if (!IsPostBack)
         {
 
@@ -87,7 +88,20 @@ public partial class _Default : System.Web.UI.Page
         output = output.TrimEnd(' ');
         output = output.TrimEnd(',');
         output += " ]\n";
-        output += topicsLabel.Text + " " + topicsDDL.SelectedValue + "\n";
+     
+        output += topicsLabel.Text + " [ ";
+
+        foreach (ListItem item in topicsListBox.Items)
+        {
+            if (item.Selected)
+            {
+                output += "\"" + item.Value + "\", ";
+            }
+        }
+        output = output.TrimEnd(' ');
+        output = output.TrimEnd(',');
+        output += " ]\n";
+
         output += summaryLabel.Text + "\n     " + summaryTextBox.Text + "\n";
         output += citeLabel.Text + "\n     " + citeTextBox.Text + "\n";
         output += pubdateLabel.Text + " " + pubdateTextBox.Text + "\n";
@@ -98,6 +112,8 @@ public partial class _Default : System.Web.UI.Page
 
     private void constructFileName()
     {
+        if(string.IsNullOrEmpty(pubdateTextBox.Text)) pubdateTextBox.Text = DateTime.Now.Date.ToString("yyyy-MM-dd");
+
         fileName += 
             pubdateTextBox.Text + 
             "-" + titleTextBox.Text
@@ -132,8 +148,6 @@ public partial class _Default : System.Web.UI.Page
                 CleartextBoxes(x);
             }
         }
-
-        pubdateTextBox.Text = DateTime.Now.Date.ToString("yyyy-MM-dd");
     }
 
     private void WriteFile()

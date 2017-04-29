@@ -71,23 +71,33 @@
                         <asp:Label ID="categoriesLabel" runat="server" Text="categories:"></asp:Label>
                     </td>
                     <td>
-                        <asp:ListBox runat="server" ID="categoriesListBox" SelectionMode="multiple">
-                        </asp:ListBox></td>
+                        <asp:ListBox runat="server" ID="categoriesListBox" SelectionMode="multiple"></asp:ListBox></td>
                 </tr>
                 <tr>
                     <td>
                         <asp:Label ID="topicsLabel" runat="server" Text="topics:"></asp:Label>
                     </td>
                     <td>
-                        <asp:DropDownList ID="topicsDDL" runat="server">
+                        <asp:ListBox ID="topicsListBox" runat="server" SelectionMode="Multiple">
                             <asp:ListItem>biographies</asp:ListItem>
+                            <asp:ListItem>controlling-for-biases</asp:ListItem>
                             <asp:ListItem>in-the-media</asp:ListItem>
                             <asp:ListItem>interviews</asp:ListItem>
                             <asp:ListItem>introductory-resources</asp:ListItem>
                             <asp:ListItem>introductory-resources-video</asp:ListItem>
+                            <asp:ListItem>irb-procedures</asp:ListItem>
                             <asp:ListItem>ongoing-projects</asp:ListItem>
+                            <asp:ListItem>research-designs</asp:ListItem>
+                            <asp:ListItem>research-ethics</asp:ListItem>
+                            <asp:ListItem>research-vocabulary</asp:ListItem>
                             <asp:ListItem>scholarly-readings</asp:ListItem>
-                        </asp:DropDownList>
+                            <asp:ListItem>controlled-experiments-in-education</asp:ListItem>
+                            <asp:ListItem>exemplary-controlled-experiments</asp:ListItem>
+                            <asp:ListItem>making-a-good-survey</asp:ListItem>
+                            <asp:ListItem>sampling-tips</asp:ListItem>
+                            <asp:ListItem>case-study-research</asp:ListItem>
+                            <asp:ListItem>qualitative-vs-quantitative-research</asp:ListItem>
+                        </asp:ListBox>
                     </td>
                 </tr>
                 <tr>
@@ -100,7 +110,7 @@
                 </tr>
                 <tr>
                     <td>
-                        <asp:Label ID="citeLabel" runat="server" Text="cite: |"></asp:Label>
+                        <asp:Label ID="citeLabel" runat="server" Text="cite: &gt;"></asp:Label>
                     </td>
                     <td>
                         <asp:TextBox ID="citeTextBox" runat="server" Height="70px" Width="667px" CssClass="auto-style4" TextMode="MultiLine"></asp:TextBox>
