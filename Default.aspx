@@ -15,6 +15,7 @@
 
         .auto-style4 {
         }
+        .auto-style5 {}
     </style>
 </head>
 <body>
@@ -78,27 +79,7 @@
                         <asp:Label ID="topicsLabel" runat="server" Text="topics:"></asp:Label>
                     </td>
                     <td>
-                        <asp:ListBox ID="topicsListBox" runat="server" SelectionMode="Multiple">
-                            <asp:ListItem>biographies</asp:ListItem>
-                            <asp:ListItem>controlling-for-biases</asp:ListItem>
-                            <asp:ListItem>in-the-media</asp:ListItem>
-                            <asp:ListItem>interviews</asp:ListItem>
-                            <asp:ListItem>introductory-resources</asp:ListItem>
-                            <asp:ListItem>introductory-resources-video</asp:ListItem>
-                            <asp:ListItem>irb-procedures</asp:ListItem>
-                            <asp:ListItem>ongoing-projects</asp:ListItem>
-                            <asp:ListItem>research-designs</asp:ListItem>
-                            <asp:ListItem>research-ethics</asp:ListItem>
-                            <asp:ListItem>research-vocabulary</asp:ListItem>
-                            <asp:ListItem>scholarly-readings</asp:ListItem>
-                            <asp:ListItem>controlled-experiments-in-education</asp:ListItem>
-                            <asp:ListItem>exemplary-controlled-experiments</asp:ListItem>
-                            <asp:ListItem>making-a-good-survey</asp:ListItem>
-                            <asp:ListItem>sampling-tips</asp:ListItem>
-                            <asp:ListItem>case-study-research</asp:ListItem>
-                            <asp:ListItem>qualitative-vs-quantitative-research</asp:ListItem>
-                            <asp:ListItem>data-sets</asp:ListItem>
-                        </asp:ListBox>
+                        <asp:TextBox ID="topicsTextBox" runat="server" CssClass="auto-style5" Width="651px"></asp:TextBox>
                     </td>
                 </tr>
                 <tr>

@@ -90,14 +90,9 @@ public partial class _Default : System.Web.UI.Page
         output += " ]\n";
      
         output += topicsLabel.Text + " [ ";
-
-        foreach (ListItem item in topicsListBox.Items)
-        {
-            if (item.Selected)
-            {
-                output += "\"" + item.Value + "\", ";
-            }
-        }
+   
+        output += "\"" + topicsTextBox.Text + "\", ";
+    
         output = output.TrimEnd(' ');
         output = output.TrimEnd(',');
         output += " ]\n";
